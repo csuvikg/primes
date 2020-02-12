@@ -1,0 +1,6 @@
+spring:
+  data:
+    mongodb:
+      database: primes
+      port: 27017
+      host: localhost

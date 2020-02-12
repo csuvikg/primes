@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: primes
+spec:
+  selector:
+    matchLabels:
+      app: primes
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: primes
+    spec:
+      containers:
+        - name: primes
+          image: "<your-docker-registry>/primes"
+          ports:
+            - name: http
+              containerPort: 8080

@@ -1,0 +1,36 @@
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#spinner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #cfcfcf;
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    transition: visibility 0s, opacity 0.5s linear;
+}
+
+#spinner img {
+    padding: 1rem;
+}
+
+#spinner.show {
+    visibility: visible;
+    opacity: 0.6;
+}
+
+#resultValue {
+    color: #275a90;
+    font-weight: bold;
+}

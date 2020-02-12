@@ -1,0 +1,23 @@
+version: '3'
+services:
+  database:
+    image: mongo
+    container_name: mongodb
+    environment:
+      - MONGO_INITDB_DATABASE=primes
+    expose:
+      - '27017-27019'
+  primes:
+    build: .
+    expose:
+      - '8080'
+    depends_on:
+      - database
+  nginx:
+    image: nginx
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - primes
+    ports:
+      - '5000:5000'
